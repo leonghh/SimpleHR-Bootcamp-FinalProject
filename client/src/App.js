@@ -1,60 +1,40 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
+import Navbar from "./components/Navbar/Navbar";
+import Landing from "./components/pages/Landing/Landing";
+import Register from "./components/Register/register";
+import Login from "./components/Login/login";
+import Dashboard from "./components/pages/Dashboard/Dashboard";
+import Roster from "./components/pages/Roster/Roster";
+import Payslips from "./components/pages/Payslips/Payslips";
+import Profile from "./components/Profile/profile";
 
-import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
-import RosterPage from './pages/RosterPage';
-import PayslipsPage from './pages/PayslipsPage';
+import "./App.css";
 
-class App extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      login: {
-        title: 'Learning Full Stack',
-      },
-      home: {
-        title: 'Learning Full Stack',
-      },
-      profile: {
-        title: 'About Me'
-      },
-      roster: {
-        title: 'Let\'s Talk'
-      },
-      payslips: {
-        title: 'Let\'s Talk'
-      }
+import StartUp from './components/pages/StartUp/startUp';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+class App extends Component {
+    render() {
+        return (
+                <Router>
+                    <div className="container-fluid pl-0 pr-0 m-0">
+                        <Navbar />
+                        <Route exact path="/" component={Landing} />
+                        <div className='container-fluid m-0 p-0'>
+                            <Route exact path="/register" component={Register} />
+                            <Route exact path="/login" component={Login} />
+                            <Route exact path="/profile" component={Profile} />
+                            <Route exact path="/dashboard" component={Dashboard} />
+                            <Route exact path="/roster" component={Roster} />
+                            <Route exact path="/payslips" component={Payslips} />
+                            <Route exact path="/startUp" component={StartUp} />
+                        </div>
+                    </div>
+                </Router>
+        );
     }
-  }
-
-
-  render() {
-    return (
-      <Router>
-        <Container className="p-0" fluid={true}>
-
-          <Link to="/">Login</Link>
-          <Link to="/home">Home</Link>
-          <Link to="/profile">Profile</Link>
-          <Link to="/roster">Roster</Link>
-          <Link to="/payslips">Payslips</Link> 
-
-          <Route path="/" exact render={() => <LoginPage title={this.state.login.title} />} />
-          <Route path="/home" render={() => <HomePage title={this.state.home.title} />} />
-          <Route path="/profile" render={() => <ProfilePage title={this.state.profile.title} />} />
-          <Route path="/roster" render={() => <RosterPage title={this.state.roster.title} />} />
-          <Route path="/payslips" render={() => <PayslipsPage title={this.state.payslips.title} />} />
-
-        </Container>
-      </Router>
-    );
-  }
 }
-
 export default App;
