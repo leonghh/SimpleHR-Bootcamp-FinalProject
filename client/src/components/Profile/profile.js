@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import jwt_decode from 'jwt-decode';
 import { Link } from "react-router-dom";
-import Sidebar from "../../Sidebar/Sidebar"
+import Sidebar from "../Sidebar/Sidebar"
 
 class Profile extends Component {
     constructor() {
