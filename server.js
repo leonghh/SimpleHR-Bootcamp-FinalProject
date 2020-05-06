@@ -31,19 +31,12 @@ app.use(
 );
 
 app.use(express.static("public"));
-
 // DB Config
 // const db = require("./config/keys").mongoURI;
 const mongoURI = "mongodb://localhost/simplehrdb";
-const dbuser = 'honghao';
-const dbpassword = '10A21e1994';
-
-const MONGODB_URI = `mongodb://heroku_hrcf91k2:8kj35qr828uto512mjci5dfufi@ds061620.mlab.com:61620/heroku_hrcf91k2`;
-
-
 
 // Connect to MongoDB
-mongoose.connect( MONGODB_URI || mongoURI, {
+mongoose.connect( process.env.MONGODB_URI || mongoURI, {
   useNewUrlParser: true,
   useFindAndModify: false
 })
