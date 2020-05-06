@@ -28,7 +28,7 @@ class Profile extends Component {
         return (
             <div className='container-fluid pl-0 m-0'>
                 <Sidebar />
-                <div className='col-sm-9 jumbotron mt-5'>
+                <div className='col-xs-12 col-sm-12 col-md-9 jumbotron jumbotron-fluid'>
                     <div className='col-sm-8 mx-auto'>
                         <h1 className='text-center'>PROFILE</h1>       
                     </div>

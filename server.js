@@ -34,7 +34,7 @@ app.use(express.static("public"));
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
-const mongoURI = "mongodb://localhost/simplehrdb";
+const mongoURI = "mongodb://<dbuser>:<dbpassword>@ds145072.mlab.com:45072/heroku_5z5m2174";
 
 // Connect to MongoDB
 mongoose.connect( process.env.MONGODB_URI || mongoURI, {
