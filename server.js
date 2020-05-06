@@ -34,10 +34,14 @@ app.use(express.static("public"));
 
 // DB Config
 // const db = require("./config/keys").mongoURI;
-const mongoURI = "mongodb://<dbuser>:<dbpassword>@ds145072.mlab.com:45072/heroku_5z5m2174";
+const mongoURI = "mongodb://localhost/simplehrdb";
+const dbuser = 'honghao';
+const dbpassword = '10A21e1994';
+
+const MONGODB_URI = `mongodb://${dbuser}:${dbpassword}@ds125453.mlab.com:25453/mern-example`;
 
 // Connect to MongoDB
-mongoose.connect( process.env.MONGODB_URI || mongoURI, {
+mongoose.connect( MONGODB_URI || mongoURI, {
   useNewUrlParser: true,
 //   useFindAndModify: false
 })
