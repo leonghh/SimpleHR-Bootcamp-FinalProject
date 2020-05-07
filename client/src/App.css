@@ -16,7 +16,7 @@
 
 html, body {
     --hue: var(--hue-neutral);
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: rgb(231, 248, 255)!important;
     height: 100%;
     margin: 0;
 }
