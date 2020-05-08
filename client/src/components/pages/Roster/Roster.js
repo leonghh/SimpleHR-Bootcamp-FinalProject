@@ -11,7 +11,6 @@ class Roster extends Component {
                 <div className="content">
                     <Calender />
                 </div>
-                
             </div>
         );
     } 

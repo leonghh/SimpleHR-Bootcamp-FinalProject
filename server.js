@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const passport = require("passport");
-
 const app = express();
-// const User = require("./models/User.js");
 const dotenv = require("dotenv");
+
 dotenv.config();
+
 const PORT = process.env.PORT || 5001;
 
 // Define middleware here
@@ -32,11 +32,11 @@ app.use(
 
 app.use(express.static("public"));
 // DB Config
-// const db = require("./config/keys").mongoURI;
+const MONGODB_URI = "mongodb://heroku_hrcf91k2:8kj35qr828uto512mjci5dfufi@ds061620.mlab.com:61620/heroku_hrcf91k2"
 const mongoURI = "mongodb://localhost/simplehrdb";
 
 // Connect to MongoDB
-mongoose.connect( process.env.MONGODB_URI || mongoURI, {
+mongoose.connect( MONGODB_URI || mongoURI, {
   useNewUrlParser: true,
   useFindAndModify: false
 })

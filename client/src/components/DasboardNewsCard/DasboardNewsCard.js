@@ -8,7 +8,7 @@ class DasboardPayslipCard extends Component {
                 <div className="card-body">
                     <h4 className="card-subtitle mb-2">News</h4>
                     <p className="card-text">No news currrently</p>
-                    <a href="/payslips" className="card-link bottomLink">More details</a>
+                    <a href="/" className="card-link bottomLink">More details</a>
                 </div>
             </div>
         );

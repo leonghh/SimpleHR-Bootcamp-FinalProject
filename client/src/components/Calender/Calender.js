@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import resourceTimelinePlugin from '@fullcalendar/resource-timeline';
+import { Confirm } from 'semantic-ui-react'
 
 class Calender extends Component {
     calendarComponentRef = React.createRef();
@@ -13,36 +11,45 @@ class Calender extends Component {
     state = {
         calendarWeekends: true,
         calendarEvents: [
-            
-        ]
+
+        ],
+        state: { open: false }
     };
 
-    handleDateClick = (arg) => {
-        alert(arg.dateStr)
-        console.log(arg)
-    }
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
     render() {
         return (
-            <FullCalendar 
-                defaultView="dayGridMonth"
-                header={{
-                    left: "prev,next today",
-                    center: "title",
-                    right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
-                }}
-                dateClick={this.handleDateClick}
-                schedulerLicenseKey='GPL-My-Project-Is-Open-Source'
-                plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
-                ref={this.calendarComponentRef}
-                weekends={this.state.calendarWeekends}
-                events={this.state.calendarEvents}
-                dateClick={this.handleDateClick}
-            />
+            <div>
+                <FullCalendar
+                    defaultView="dayGridMonth"
+                    header={{
+                        left: "prev,next today",
+                        center: "title",
+                        right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
+                    }}
+                    dateClick={this.handleDateClick}
+                    schedulerLicenseKey='GPL-My-Project-Is-Open-Source'
+                    plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
+                    ref={this.calendarComponentRef}
+                    weekends={this.state.calendarWeekends}
+                    events={this.state.calendarEvents}
+                    dateClick={this.open}
+                />
+                <Confirm
+                    open={this.state.open}
+                    onCancel={this.close}
+                    onConfirm={this.close}
+                    confirmButton="Yes"
+                    content='Will you like to block date?'
+                />
+            </div>
+
         )
     }
 
-    
+
 }
 
 export default Calender;
