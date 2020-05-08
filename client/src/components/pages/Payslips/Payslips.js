@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Sidebar from "../../Sidebar/Sidebar"
+import PayslipJumbo from "../../PayslipJumbo/PayslipJumbo"
 
 class Payslips extends Component {
     render() {
@@ -7,9 +8,7 @@ class Payslips extends Component {
             <div className="container-fluid h-100 p-0 m-0">
                 <Sidebar />
                 <div>      
-                    <div>
-                        <p>Payslips Working</p>
-                    </div>
+                    <PayslipJumbo />
                 </div>
             </div>
         );

@@ -41,8 +41,9 @@ class Calender extends Component {
                     open={this.state.open}
                     onCancel={this.close}
                     onConfirm={this.close}
-                    confirmButton="Yes"
-                    content='Will you like to block date?'
+                    confirmButton="Available"
+                    cancelButton="Block Date"
+                    content='Will you be available on this date?'
                 />
             </div>
 

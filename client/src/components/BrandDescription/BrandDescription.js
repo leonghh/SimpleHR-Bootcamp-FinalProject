@@ -9,7 +9,7 @@ class BrandDescription extends Component {
                     <div className="cardBackground card col-md-9 col-xs-12">
                         <div className="card-body">
                             <h5 className="card-title">About SimpleHR</h5>
-                            <p className="card-text">SimpleHR is a real-time rostering application that lets employers publish rosters straight to employees and assign jobs to individual staff members. The employees can also request time off via this application. Employers can even advertise an open shift to the employees.</p>
+                            <p className="card-text">SimpleHR is a real-time rostering application that lets employers publish rosters straight to employees and assign jobs to individual staff members. The employees can set their availabilities and request time off via this application. Employers can even advertise an open shift to the employees.</p>
                         </div>
                     </div>
 
