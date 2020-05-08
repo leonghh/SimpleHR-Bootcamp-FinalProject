@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import jwt_decode from 'jwt-decode';
 import Sidebar from "../../Sidebar/Sidebar";
+import DasboardPayslipCard from "../../DasboardPayslipCard/DasboardPayslipCard"
+import DasboardNewsCard from "../../DasboardNewsCard/DasboardNewsCard"
+
 
 class DashBoard extends Component {
     constructor() {
@@ -31,6 +34,10 @@ class DashBoard extends Component {
                         <h1>
                              Welcome { this.state.first_name } { this.state.last_name }
                         </h1>
+                        <div className="d-flex flex-row-reverse mr-5">
+                            <DasboardPayslipCard />
+                            <DasboardNewsCard />
+                        </div>
                     </div>
             </div>
         );

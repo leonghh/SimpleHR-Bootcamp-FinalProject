@@ -5,10 +5,15 @@
     background-position: center center;
 }
 
-.jumbotron {
+.landingJumbo {
     width: 60%;
     background-color: rgba(204, 204, 204, 0.6) !important;
 }
+
+.cardBackground{
+    background-color: rgb(231, 248, 255)!important;
+}
+
 
 .jumboText {
     color: black;
