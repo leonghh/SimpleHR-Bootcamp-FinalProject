@@ -11,7 +11,7 @@ class Calender extends Component {
     state = {
         calendarWeekends: true,
         calendarEvents: [
-
+            { title: 'Blocked', date: '2020-05-10' },
         ],
         state: { open: false }
     };
@@ -29,13 +29,13 @@ class Calender extends Component {
                         center: "title",
                         right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek"
                     }}
-                    dateClick={this.handleDateClick}
                     schedulerLicenseKey='GPL-My-Project-Is-Open-Source'
                     plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
                     ref={this.calendarComponentRef}
                     weekends={this.state.calendarWeekends}
                     events={this.state.calendarEvents}
                     dateClick={this.open}
+                    height={600}
                 />
                 <Confirm
                     open={this.state.open}
